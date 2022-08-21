@@ -1,8 +1,8 @@
 /*
 to test:
-1. the end of str is '\0'
-2. print &str private value
-3. what is object reference
+1. the end of str is '\0' - yes
+2. print &str private value - yes
+3. what is object reference - alias of object
 */
 
 #include "CMyString.h"
@@ -14,6 +14,7 @@ void TestContinuesAssign()
 
 	CMyString str2 = CMyString((char*)"World");
 	CMyString str3 = CMyString((char*)"World");
+	
 	
 	str2 = str3 = str1;
 }

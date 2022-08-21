@@ -29,11 +29,20 @@ CMyString::~CMyString()
 
 CMyString& CMyString::operator=(const CMyString& str)
 {
-	if (this != &str) {
+	/*if (this != &str) {
 		delete[] m_pData;
 		int length = strlen(str.m_pData);
 		m_pData = new char[length + 1];
 		strcpy(m_pData, str.m_pData);
+	}
+	return *this;*/
+
+	if (this != &str) {
+		/*
+		first to allocate memory
+		then to judge is safe
+		*/
+
 	}
 	return *this;
 }

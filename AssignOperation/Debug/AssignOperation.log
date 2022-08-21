@@ -1,3 +1,5 @@
-﻿  Test.cpp
-D:\Visual Studio 2022\InterviewCoding\AssignOperation\Test.cpp(34,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+﻿  CMyString.cpp
+  Test.cpp
+D:\Visual Studio 2022\InterviewCoding\AssignOperation\Test.cpp(35,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
   AssignOperation.vcxproj -> D:\Visual Studio 2022\InterviewCoding\Debug\AssignOperation.exe
