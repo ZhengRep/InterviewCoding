@@ -1,5 +1,4 @@
 #include "List.h"
-#include "pch.h"
 
 LISTNODE* CreateNode(int value)
 {
@@ -17,14 +16,14 @@ void ConnectNode(LISTNODE* pCurrent, LISTNODE* pNext)
 	pCurrent->m_pNext = pNext;
 }
 
-bool DeleteNodeByValue(LISTNODE* pHead, int value)
+bool DeleteNodeByValue(LISTNODE** pHead, int value)
 {
-	if (pHead == nullptr) return false;
+	if (*pHead == nullptr) return false;
 
-	LISTNODE* pNode = pHead;
+	LISTNODE* pNode = *pHead;
 	if (pNode->m_nValue == value) {
-		if (pHead->m_pNext != nullptr) pHead = pHead->m_pNext;
-		else pHead = nullptr;
+		if (*pHead->m_pNext != nullptr) *pHead = *pHead->m_pNext;
+		else *pHead = nullptr;
 
 		delete pNode;
 	}
