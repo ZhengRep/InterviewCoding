@@ -16,15 +16,19 @@ void ConnectNode(LISTNODE* pCurrent, LISTNODE* pNext)
 	pCurrent->m_pNext = pNext;
 }
 
-bool DeleteNodeByValue(LISTNODE** pHead, int value)
+//should to use return value carefully
+bool DeleteNodeByValue(PLISTNODE* pHeaderAddr, int value)
 {
-	if (*pHead == nullptr) return false;
+	if (*pHeaderAddr == nullptr) return false;
 
-	LISTNODE* pNode = *pHead;
+	LISTNODE* pNode = (*pHeaderAddr);
 	if (pNode->m_nValue == value) {
-		if (*pHead->m_pNext != nullptr) *pHead = *pHead->m_pNext;
-		else *pHead = nullptr;
-
+		if (pNode->m_pNext != nullptr) {
+			*pHeaderAddr = pNode->m_pNext;
+		}
+		else {
+			*pHeaderAddr = nullptr;
+		}
 		delete pNode;
 	}
 	else {
@@ -76,4 +80,17 @@ void PrintListForward(LISTNODE* pHead)
 		pNode = pNode->m_pNext;
 	}
 	printf("\n");
+}
+
+void RemoveList(LISTNODE* pHead)
+{
+	LISTNODE* pNode = pHead;
+	while (pHead->m_pNext != nullptr)
+	{
+		pHead = pHead->m_pNext;
+		delete pNode;
+		pNode = pHead;
+	}
+	delete pHead;
+	pHead = nullptr;
 }
