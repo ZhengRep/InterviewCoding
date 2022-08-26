@@ -82,7 +82,7 @@ void PrintListForward(LISTNODE* pHead)
 	printf("\n");
 }
 
-void RemoveList(LISTNODE* pHead)
+void DestroyList(LISTNODE* pHead)
 {
 	LISTNODE* pNode = pHead;
 	while (pHead->m_pNext != nullptr)
