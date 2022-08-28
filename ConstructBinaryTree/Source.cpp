@@ -15,30 +15,43 @@ the left part in inorder by root is left child tree
 Preorder: 1 2 4 3 5
 Inorder:  4 2 1 3 5
 
+what is substract:
+
 */
 
 
 PBINARYTREENODE ConstructBinaryTreeCore(int* startPreorder, int* endPreorder, int* startInorder, int* endInorder)
 {
-	if (startPreorder == endPreorder || startInorder == endInorder) throw std::exception("Argument error");
+	if (startInorder == nullptr || endPreorder == nullptr || startInorder > endPreorder || startInorder == nullptr || endInorder == nullptr || startInorder > endInorder) return nullptr;
 
 	int rootValue = *startPreorder;
 	PBINARYTREENODE pRoot = CreateBinaryTreeNode(rootValue);
 
+	//if (startPreorder == endPreorder && startInorder == endInorder) return pRoot;
 	//to find rootValue in inorder
-	while (*startInorder != rootValue)
+	int* startInorderOriginal = startInorder;
+	while (*startInorder != rootValue && startInorder != endInorder)
 	{
-		++startInorder;
+		startInorder++;
 	}
-	if (startInorder == endInorder) {
-		if (*startInorder != rootValue) throw std::exception("Invalide input");
-		else return pRoot;
-	}
-	int leftLength = endInorder - startInorder;
-	int* rootInorder = startInorder;
+	if (startInorder == endInorder && *startInorder != rootValue) throw std::exception("Invalid input");
+	
+	int leftNum = startInorder - startInorderOriginal;
+	int rightNum = endInorder - startInorder; //root's left child or right child?
 
-	pRoot->m_pLeft = ConstructBinaryTreeCore(startPreorder + 1, startPreorder + leftLength, startInorder - leftLength, startInorder - 1);
-	pRoot->m_pRight = ConstructBinaryTreeCore(startPreorder + leftLength + 1, endPreorder, startInorder + 1, endInorder);
+	if (leftNum == 0) {
+		return CreateBinaryTreeNode(*startInorder);
+	}
+	else if (rightNum == 0) {
+		return CreateBinaryTreeNode(*startInorder);
+	}
+	else if(leftNum > 0)
+	{
+		pRoot->m_pLeft = ConstructBinaryTreeCore(startPreorder + 1, startPreorder + leftNum, startInorderOriginal, startInorder - 1);
+	}
+	else if (rightNum > 0) {
+		pRoot->m_pRight = ConstructBinaryTreeCore(startInorder + leftNum + 1, endPreorder, startInorder + 1, endInorder);
+	}
 
 	return pRoot;
 }
@@ -62,6 +75,6 @@ int main()
 
 	printf("Expect tree:\n");
 	printf("1 2 4 3 5\n");
-
+	
 	return 0;
 }
