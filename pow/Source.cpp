@@ -14,8 +14,11 @@ double GetPowValueWithUnsignedExponent(double base, unsigned int exponent)
         result *= base;
     }
     return result;*/
-
-    
+    if (exponent == 1) return base;
+    double result = GetPowValueWithUnsignedExponent(base, exponent >> 1);
+    result *= result;
+    if (exponent & 0x1) result *= base;
+    return result;
 }
 
 double GetPowValue(double base, int exponent)
