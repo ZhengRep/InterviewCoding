@@ -8,7 +8,7 @@ bool Increment(char* numArray)
 {
 	int addIndex = strlen(numArray) - 1;
 	numArray[addIndex]++;
-	if (addIndex == 0 && numArray[0] - '0' == 10) return false;
+	//if (addIndex == 0 && numArray[0] - '0' == 10) return false;
 	
 	int carry = 0;
 	if (numArray[addIndex] - '0' > 9) {
@@ -19,7 +19,7 @@ bool Increment(char* numArray)
 	int carrySum = addIndex + 1;
 	while (carry)
 	{
-		if (carrySum-- == 0) return false;
+		if (--carrySum == 0) return false;
 		//if (numArray[0] - '0' == 9) return false;
 		numArray[--addIndex]++;
 		carry = 0;
@@ -49,11 +49,13 @@ void PrintToNMaxNum(int n)
 	if (numArray == nullptr) return;
 	memset(numArray, '0', n);
 	numArray[n] = '\0';
+	numArray[n - 1] = '1';
 
-	while (Increment(numArray))
+	do 
 	{
 		printNumArray(numArray);
-	}
+	} while (Increment(numArray)); //when add to n+1 to return false
+
 }
 
 void Test(int n)
@@ -62,7 +64,7 @@ void Test(int n)
 
 	PrintToNMaxNum(n);
 
-	printf("\nTest for %d ends.\n\n", n);
+	printf("Test for %d ends.\n\n", n);
 }
 
 int main(int argc, char* argv[])
