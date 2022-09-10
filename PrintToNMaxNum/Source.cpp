@@ -8,7 +8,6 @@ bool Increment(char* numArray)
 {
 	int addIndex = strlen(numArray) - 1;
 	numArray[addIndex]++;
-	//if (addIndex == 0 && numArray[0] - '0' == 10) return false;
 	
 	int carry = 0;
 	if (numArray[addIndex] - '0' > 9) {
@@ -20,7 +19,6 @@ bool Increment(char* numArray)
 	while (carry)
 	{
 		if (--carrySum == 0) return false;
-		//if (numArray[0] - '0' == 9) return false;
 		numArray[--addIndex]++;
 		carry = 0;
 		if (numArray[addIndex] - '0' > 9) {
