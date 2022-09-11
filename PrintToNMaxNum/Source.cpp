@@ -56,20 +56,36 @@ void PrintToNMaxNum(int n)
 
 }
 
+void fillArrayWithZeroToNine(char* arrayBuffer, int length, int index)
+{
+	
+}
+
+void printNumByRecursively(int n)
+{
+	if (n <= 0) return;
+	char* numArray = new char[n + 1];
+	if (numArray == nullptr) return;
+	memset(numArray, '0', n);
+	numArray[n] = '\0';
+	
+}
+
 void Test(int n)
 {
 	printf("Test for %d begins:\n", n);
 
-	PrintToNMaxNum(n);
+	//PrintToNMaxNum(n);
+
 
 	printf("Test for %d ends.\n\n", n);
 }
 
 int main(int argc, char* argv[])
 {
-	Test(1);
+	//Test(1);
 	Test(2);
-	Test(3);
+	//Test(3);
 	Test(0);
 	Test(-1);
 
