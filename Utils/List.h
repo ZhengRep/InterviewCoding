@@ -1,10 +1,10 @@
 #pragma once
 #include<stdio.h>
 
-struct LISTNODE {
+typedef struct LISTNODE {
 	int m_nValue;
 	LISTNODE* m_pNext;
-};
+}ListNode;
 typedef LISTNODE* PLISTNODE;
 
 __declspec(dllexport) LISTNODE * CreateNode(int value);

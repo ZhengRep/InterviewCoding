@@ -66,6 +66,7 @@ void AddNodeToTail(LISTNODE* pHead, int value)
 
 void PrintNode(LISTNODE* pNode)
 {
+	if (pNode == nullptr) return;
 	printf("%d ", pNode->m_nValue);
 }
 
