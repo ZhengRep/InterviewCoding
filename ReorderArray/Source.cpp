@@ -25,7 +25,7 @@ void swap(int& num1, int& num2)
 }
 
 //odd value & 1 == 1 is odd
-void reorderArray(int* array, int length)
+void reorderArray(int* array, int length, bool fun(int))
 {
 	if (array == nullptr || length < 2) return;
 	int evenIndex = 0;
@@ -33,15 +33,20 @@ void reorderArray(int* array, int length)
 	while (evenIndex < oddIndex)
 	{
 		//get pre even value
-		while(array[evenIndex] % 2 != 0 && evenIndex <= length) evenIndex++;
+		while(fun(array[evenIndex]) && evenIndex <= length) evenIndex++;
 		if (evenIndex == length) return;
 
 		//get post odd value
-		while (array[oddIndex] % 2 != 1 && oddIndex > -1) oddIndex--;
+		while (!fun(array[oddIndex]) && oddIndex > -1) oddIndex--;
 		if (oddIndex == -1) return;
 
 		if (oddIndex + 1 != evenIndex) swap(array[oddIndex], array[evenIndex]);
 	}
+}
+
+bool isOdd(int value)
+{
+	return value & 1;
 }
 /*
 void Test((char*)int* array, int length, char* description)
@@ -122,7 +127,7 @@ void Test(char* testName, int numbers[], int length)
 
 	printf("Test for solution 1:\n");
 	PrintArray(numbers, length);
-	reorderArray(numbers, length);
+	reorderArray(numbers, length, isOdd);
 	PrintArray(numbers, length);
 
 	delete[] copy;

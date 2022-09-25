@@ -6,6 +6,7 @@ struct BINARYTREENODE {
 	BINARYTREENODE* m_pRight;
 };
 typedef BINARYTREENODE* PBINARYTREENODE;
+typedef BINARYTREENODE BinaryTreeNode;
 
 __declspec(dllexport) PBINARYTREENODE CreateBinaryTreeNode(int value);
 __declspec(dllexport) void ConnetBinaryTreeNode(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLeftNode, PBINARYTREENODE pRightNode);
