@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrintMatrix", "PrintMatrix\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "printMatrixRe", "printMatrixRe\printMatrixRe.vcxproj", "{44F00AAB-A207-4D23-BC4C-5BB45FABFC9C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MinInStack", "MinInStack\MinInStack.vcxproj", "{E51E7828-4B6D-418C-90CB-3E8AE41E548C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{44F00AAB-A207-4D23-BC4C-5BB45FABFC9C}.Release|x64.Build.0 = Release|x64
 		{44F00AAB-A207-4D23-BC4C-5BB45FABFC9C}.Release|x86.ActiveCfg = Release|Win32
 		{44F00AAB-A207-4D23-BC4C-5BB45FABFC9C}.Release|x86.Build.0 = Release|Win32
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Debug|x64.ActiveCfg = Debug|x64
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Debug|x64.Build.0 = Debug|x64
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Debug|x86.ActiveCfg = Debug|Win32
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Debug|x86.Build.0 = Debug|Win32
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Release|x64.ActiveCfg = Release|x64
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Release|x64.Build.0 = Release|x64
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Release|x86.ActiveCfg = Release|Win32
+		{E51E7828-4B6D-418C-90CB-3E8AE41E548C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
