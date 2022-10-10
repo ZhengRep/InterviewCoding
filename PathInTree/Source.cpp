@@ -4,7 +4,7 @@
 
 #pragma comment(lib, "../Debug/Utils.lib")
 
-bool checkVectorNodeSum(std::vector<PBINARYTREENODE>& vector,int sum)
+bool checkVectorNodeSum(std::vector<PBINARYTREENODE>& vector,int sum) //use currentSum to replace this function
 {
 	int tempSum = 0;
 	for (auto i = vector.begin(); i != vector.end(); i++)
@@ -18,30 +18,27 @@ bool checkVectorNodeSum(std::vector<PBINARYTREENODE>& vector,int sum)
 	return false;
 }
 
-void traversalTreeByPreOrderAndCheckSumToPrint(PBINARYTREENODE pRoot, std::vector<PBINARYTREENODE>& vector, int sum)
+void traversalTreeByPreOrderAndCheckSumToPrint(PBINARYTREENODE pRoot, std::vector<PBINARYTREENODE>& vector, int& curentSum, int sum) //add currentsum 
 {
 	if (!pRoot) return;
 
 	vector.push_back(pRoot);
-	if (checkVectorNodeSum(vector, sum)) {
+	curentSum += pRoot->m_nValue;
+
+	if (curentSum == sum) {
 		if (!pRoot->m_pLeft && !pRoot->m_pRight) { //print and pop must be leaf node
 			for (auto i = vector.begin(); i != vector.end(); i++)
 			{
 				printf("%d\t", (*i)->m_nValue);
 			}
 			printf("\n");
-
-			vector.pop_back();
 		}
 	}
-	else {
-		if (!pRoot->m_pLeft && !pRoot->m_pRight) { //have reach leaf node and not satisfy sum
-			vector.pop_back();
-		}
-	}
-	traversalTreeByPreOrderAndCheckSumToPrint(pRoot->m_pLeft, vector, sum);
-	traversalTreeByPreOrderAndCheckSumToPrint(pRoot->m_pRight, vector, sum);
+	traversalTreeByPreOrderAndCheckSumToPrint(pRoot->m_pLeft, vector, curentSum, sum);
+	traversalTreeByPreOrderAndCheckSumToPrint(pRoot->m_pRight, vector, curentSum, sum);
 
+	vector.pop_back();
+	curentSum -= pRoot->m_nValue;
 }
 
 void printPathInTreeBySum(PBINARYTREENODE pRoot, int sum)
@@ -51,8 +48,9 @@ void printPathInTreeBySum(PBINARYTREENODE pRoot, int sum)
 	std::vector<PBINARYTREENODE> vector;
 
 	//traversal tree by preorder 
-	//
-	traversalTreeByPreOrderAndCheckSumToPrint(pRoot, vector, sum);
+	
+	int currentSum = 0;
+	traversalTreeByPreOrderAndCheckSumToPrint(pRoot, vector, currentSum, sum);
 }
 
 
@@ -81,9 +79,11 @@ void Test1()
 	BinaryTreeNode* pNode12 = CreateBinaryTreeNode(12);
 	BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
 	BinaryTreeNode* pNode7 = CreateBinaryTreeNode(7);
+	BinaryTreeNode* pNode0 = CreateBinaryTreeNode(0);
 
 	ConnectTreeNodes(pNode10, pNode5, pNode12);
 	ConnectTreeNodes(pNode5, pNode4, pNode7);
+	ConnectTreeNodes(pNode7, pNode0, nullptr);
 
 	printf("Two paths should be found in Test1.\n");
 	Test("Test1", pNode10, 22);
