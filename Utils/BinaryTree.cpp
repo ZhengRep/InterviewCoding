@@ -11,7 +11,7 @@ PBINARYTREENODE CreateBinaryTreeNode(int value)
 	return pNode;
 }
 
-void ConnectBinaryTreeNode(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLeftNode, PBINARYTREENODE pRightNode)
+void ConnectTreeNodes(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLeftNode, PBINARYTREENODE pRightNode)
 {
 	if (pBinaryTreeRoot == nullptr) return;
 	if (pLeftNode != nullptr) {
@@ -22,11 +22,11 @@ void ConnectBinaryTreeNode(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLef
 	}
 }
 
-void DestroyBinaryTree(PBINARYTREENODE pBinaryTreeRoot)
+void DestroyTree(PBINARYTREENODE pBinaryTreeRoot)
 {
 	if (pBinaryTreeRoot == nullptr) return;
-	DestroyBinaryTree(pBinaryTreeRoot->m_pLeft);
-	DestroyBinaryTree(pBinaryTreeRoot->m_pRight);
+	DestroyTree(pBinaryTreeRoot->m_pLeft);
+	DestroyTree(pBinaryTreeRoot->m_pRight);
 
 	delete pBinaryTreeRoot;
 	pBinaryTreeRoot = nullptr;

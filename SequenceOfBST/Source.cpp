@@ -16,7 +16,7 @@ bool sequenceIsPostOrderOfBST(int* sequence, int startIndex, int endIndex)
 	for (int i = rightChildTreeStartIndex; i < endIndex; i++)
 	{
 		if (sequence[i] <= sequence[endIndex]) return false;
-	}
+	}			
 	
 	bool result = true;
 	if (rightChildTreeStartIndex != startIndex) result = result && sequenceIsPostOrderOfBST(sequence, startIndex, rightChildTreeStartIndex - 1);

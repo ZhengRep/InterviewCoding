@@ -9,7 +9,7 @@ typedef BINARYTREENODE* PBINARYTREENODE;
 typedef BINARYTREENODE BinaryTreeNode;
 
 __declspec(dllexport) PBINARYTREENODE CreateBinaryTreeNode(int value);
-__declspec(dllexport) void ConnectBinaryTreeNode(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLeftNode, PBINARYTREENODE pRightNode);
-__declspec(dllexport) void DestroyBinaryTree(PBINARYTREENODE pBinaryTreeRoot);
+__declspec(dllexport) void ConnectTreeNodes(PBINARYTREENODE pBinaryTreeRoot, PBINARYTREENODE pLeftNode, PBINARYTREENODE pRightNode);
+__declspec(dllexport) void DestroyTree(PBINARYTREENODE pBinaryTreeRoot);
 __declspec(dllexport) void PrintBinaryTree(const PBINARYTREENODE pBinaryTreeRoot);
 
