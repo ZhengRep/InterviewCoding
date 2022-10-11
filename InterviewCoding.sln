@@ -55,6 +55,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MirrorTree", "MirrorTree\Mi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PathInTree", "PathInTree\PathInTree.vcxproj", "{87B09712-0AA0-45BF-8F7B-1D2CC2A77B89}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloneComplexList", "CloneMutiplexList\CloneMutiplexList.vcxproj", "{695746B6-A6F6-4512-B3E4-1E17A95D1772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -271,6 +273,14 @@ Global
 		{87B09712-0AA0-45BF-8F7B-1D2CC2A77B89}.Release|x64.Build.0 = Release|x64
 		{87B09712-0AA0-45BF-8F7B-1D2CC2A77B89}.Release|x86.ActiveCfg = Release|Win32
 		{87B09712-0AA0-45BF-8F7B-1D2CC2A77B89}.Release|x86.Build.0 = Release|Win32
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Debug|x64.ActiveCfg = Debug|x64
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Debug|x64.Build.0 = Debug|x64
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Debug|x86.ActiveCfg = Debug|Win32
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Debug|x86.Build.0 = Debug|Win32
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Release|x64.ActiveCfg = Release|x64
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Release|x64.Build.0 = Release|x64
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Release|x86.ActiveCfg = Release|Win32
+		{695746B6-A6F6-4512-B3E4-1E17A95D1772}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
