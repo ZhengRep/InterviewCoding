@@ -7,17 +7,17 @@ void permutation(char* pStr, char* pBegin)
 		return;
 	}
 	else {
-		for (char* pCharElement = pBegin; *pCharElement != '\0'; pCharElement++)
+		for (char* pElement = pBegin; *pElement != '\0'; pElement++)
 		{
-			char temp = *pCharElement;
-			*pCharElement = *pStr;
+			char temp = *pElement;
+			*pElement = *pStr;
 			*pStr = temp;
 
 			permutation(pStr, pBegin + 1);
 
-			temp = *pBegin;
-			*pBegin = *pStr;
-			*pStr = temp;
+			temp = *pStr;
+			*pStr = *pElement;
+			*pElement = temp;
 		}
 
 	}
