@@ -10,14 +10,14 @@ void permutation(char* pStr, char* pBegin)
 		for (char* pElement = pBegin; *pElement != '\0'; pElement++)
 		{
 			char temp = *pElement;
-			*pElement = *pStr;
-			*pStr = temp;
+			*pElement = *pBegin;
+			*pBegin = temp;
 
 			permutation(pStr, pBegin + 1);
 
-			temp = *pStr;
-			*pStr = *pElement;
-			*pElement = temp;
+			temp = *pElement;
+			*pElement = *pBegin;
+			*pBegin = temp;
 		}
 
 	}
