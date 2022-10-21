@@ -16,6 +16,7 @@ void permutation(char* pStr, char* pBegin)
 			permutation(pStr, pBegin + 1);
 
 			temp = *pElement;
+
 			*pElement = *pBegin;
 			*pBegin = temp;
 		}
