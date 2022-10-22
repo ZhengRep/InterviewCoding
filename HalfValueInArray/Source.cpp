@@ -87,7 +87,7 @@ bool CheckIsMoreHalfValue(int* array, int length, int value)
 		if (array[i] == value) times++;
 	}
 
-	if (times >= length / 2) return true;
+	if (times >= (length + 1) / 2) return true;
 	return false;
 }
 
@@ -115,6 +115,33 @@ bool HalfValueInArray(int* array, int length, int* halfValue)
 	return false;
 }
 
+//must more than half
+bool HalfValueInArrayOn(int* array, int length, int* halfValue)
+{
+	if (CheckArrayValid(array, length)) {
+		int result = array[0];
+		int times = 0;
+		for (int i = 0; i < length; i++)
+		{
+			if (array[i] == result) times++;
+			else {
+				if (times == 0) {
+					result = array[i];
+					times++;
+				}
+				else {
+					times--;
+				}
+			}
+		}
+		if (times != 0 && CheckIsMoreHalfValue(array, length, result)) {
+			*halfValue = result;
+			return true;
+		}
+	}
+	return false;
+}
+
 /*
 Test
 */
@@ -123,7 +150,7 @@ void Test(const char* testDescriptor, int* array, int length, int expectValue, b
 {
 	printf("%s\n", testDescriptor);
 	int halfValue;
-	if (HalfValueInArray(array, length, &halfValue) == isHave) {
+	if (HalfValueInArrayOn(array, length, &halfValue) == isHave) {
 		if (halfValue == expectValue) {
 			printf("Passed!  %d\n", halfValue);
 		}
@@ -151,7 +178,19 @@ void Test2()
 void Test3()
 {
 	int array[] = { 2, 2, 4, 4};
-	Test("have one of 2 / 4 half value:", array, sizeof(array) / sizeof(int), 2, true);
+	Test("have one of 2 / 4 half value:", array, sizeof(array) / sizeof(int), 2, false);
+}
+
+void Test4()
+{
+	int array[] = { 1, 3, 4, 5, 2, 2, 2, 2, 2 };
+	Test("the right:", array, sizeof(array) / sizeof(int), 2, true);
+}
+
+void Test5()
+{
+	int array[] = { 2, 2, 2, 2, 2, 1, 3, 4, 5 };
+	Test("the left:", array, sizeof(array) / sizeof(int), 2, true);
 }
 
 int main()
@@ -160,5 +199,7 @@ int main()
 	Test1();
 	Test2();
 	Test3();
+	Test4();
+	Test5();
 	return 0;
 }
