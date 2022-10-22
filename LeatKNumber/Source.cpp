@@ -1,4 +1,6 @@
 #include<cstdio>
+#include<vector>
+#include<set>
 #include<cstdlib>
 #include<exception>
 
@@ -16,6 +18,7 @@ void Swap(int& a, int& b)
 	b = temp;
 }
 
+//must input all, can copy array to avoid change array values
 int Partition(int* array, int length)
 {
 	if (array == nullptr || length <= 0) throw std::exception("Invalid parameter!\n");
@@ -48,6 +51,32 @@ void LeastKNumberInArray(int* array, int length, int k)
 	if (array == nullptr || length <= 0 || k < 1 || k > length) return;
 
 	while (Partition(array, length) != k - 1) {};
+}
+
+typedef std::multiset<int, std::greater<int>> intSet;
+typedef std::multiset<int, std::greater<int>>::iterator setIterator;
+
+
+void LeasKNumberWithSet(std::vector<int>& array, int k, intSet& leastNumbers)
+{
+	if (k < 1 || array.empty()) return;
+
+	std::vector<int>::iterator iter = array.begin();
+	for (; iter != array.end(); iter++)
+	{
+		if (leastNumbers.size() < k) {
+			leastNumbers.insert(*iter);
+		}
+		else {
+			setIterator iterGreater = leastNumbers.begin();
+			if (*iter < *(iterGreater)) {
+				leastNumbers.erase(iterGreater);
+				leastNumbers.insert(*iter);
+			}
+		}
+	}
+
+
 }
 
 void Test(const char* testName, int* array, int length, int k, int* expectValues)
