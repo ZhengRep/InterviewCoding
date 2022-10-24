@@ -16,7 +16,35 @@ int GreatestSumOfSubarray(int* array, int length)
 
 	for (int i = 0; i < length; i++)
 	{
-		
+		//if (array[i] > 0) {
+		//	//may be this value is greatest
+		//	if (nCurSum < 0)
+		//	{
+		//		nCurSum = array[i];
+		//	}
+		//	else {
+		//		nCurSum += array[i];
+		//	}
+		//}
+		//else { //value is minus
+		//	if (nCurSum < 0) {
+		//		nCurSum = array[i]; // more less than
+		//	}
+		//	else {
+		//		nCurSum += array[i];
+		//	}
+		//}
+
+		if (nCurSum <= 0) {
+			nCurSum = array[i];
+		}
+		else {
+			nCurSum += array[i];
+		}
+
+		if (nCurSum > nGreatestValue) {
+			nGreatestValue = nCurSum;
+		}
 	}
 
 	return nGreatestValue;
