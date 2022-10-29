@@ -69,6 +69,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GreatestSumOfSubarray", "Gr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OneAppearNumFromOneToN", "1ShowNumFrom1ToN\1ShowNumFrom1ToN.vcxproj", "{AD9F6A71-4EBD-4942-A8A1-38071A21049C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SortArrayForMinNum", "SortArrayForMinNum\SortArrayForMinNum.vcxproj", "{5EDA1126-5E4A-4716-BF16-644A7E235FB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -341,6 +343,14 @@ Global
 		{AD9F6A71-4EBD-4942-A8A1-38071A21049C}.Release|x64.Build.0 = Release|x64
 		{AD9F6A71-4EBD-4942-A8A1-38071A21049C}.Release|x86.ActiveCfg = Release|Win32
 		{AD9F6A71-4EBD-4942-A8A1-38071A21049C}.Release|x86.Build.0 = Release|Win32
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Debug|x64.ActiveCfg = Debug|x64
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Debug|x64.Build.0 = Debug|x64
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Debug|x86.ActiveCfg = Debug|Win32
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Debug|x86.Build.0 = Debug|Win32
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Release|x64.ActiveCfg = Release|x64
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Release|x64.Build.0 = Release|x64
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Release|x86.ActiveCfg = Release|Win32
+		{5EDA1126-5E4A-4716-BF16-644A7E235FB0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
