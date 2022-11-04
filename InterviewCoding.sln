@@ -73,6 +73,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SortArrayForMinNum", "SortA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TraverseBinaryTreeNoRecursive", "TraverseBinaryTreeNoRecursive\TraverseBinaryTreeNoRecursive.vcxproj", "{7C05D832-DC6C-4F49-BC59-3A21705CB2DE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GreaterAndLeastValue", "GreaterAndLeastValue\GreaterAndLeastValue.vcxproj", "{A2ABB563-EC0B-4C37-9438-B75B8650F84F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -361,6 +363,14 @@ Global
 		{7C05D832-DC6C-4F49-BC59-3A21705CB2DE}.Release|x64.Build.0 = Release|x64
 		{7C05D832-DC6C-4F49-BC59-3A21705CB2DE}.Release|x86.ActiveCfg = Release|Win32
 		{7C05D832-DC6C-4F49-BC59-3A21705CB2DE}.Release|x86.Build.0 = Release|Win32
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Debug|x64.ActiveCfg = Debug|x64
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Debug|x64.Build.0 = Debug|x64
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Debug|x86.Build.0 = Debug|Win32
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Release|x64.ActiveCfg = Release|x64
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Release|x64.Build.0 = Release|x64
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Release|x86.ActiveCfg = Release|Win32
+		{A2ABB563-EC0B-4C37-9438-B75B8650F84F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

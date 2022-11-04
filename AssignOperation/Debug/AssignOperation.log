@@ -1,2 +1,5 @@
-﻿  LINK : D:\Visual Studio 2022\InterviewCoding\Debug\AssignOperation.exe not found or not built by the last incremental link; performing full link
-  AssignOperation.vcxproj -> D:\Visual Studio 2022\InterviewCoding\Debug\AssignOperation.exe
+﻿  CMyString.cpp
+  Test.cpp
+E:\Vstudio2019\InterviewCoding\AssignOperation\Test.cpp(35,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
+  AssignOperation.vcxproj -> E:\Vstudio2019\InterviewCoding\Debug\AssignOperation.exe
