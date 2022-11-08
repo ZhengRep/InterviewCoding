@@ -29,30 +29,25 @@ char* parseAndReverseString(char* str)
 	//swap sentence
 	swapString(str, 0, strlen(str) - 1);
 
-	//swap word and deal space
-	//first word is diff
-	int tailIndex = 0, nextSwapStringIndex = 0;
-	//index to space
-	while (str[nextSwapStringIndex] != ' ')
-	{
-		nextSwapStringIndex++;
-	};
-	swapString(str, tailIndex, nextSwapStringIndex - 1);
-	tailIndex = nextSwapStringIndex + 1;
-	nextSwapStringIndex++;
-	
-	//deal middle word
-	while (str[nextSwapStringIndex] != '\0' && nextSwapStringIndex < strlen(str))
-	{
-		//index to word last num
-		while (!(str[nextSwapStringIndex] != ' ' && (str[nextSwapStringIndex + 1] == ' ' || str[nextSwapStringIndex] == '\0')))
-		{
-			nextSwapStringIndex++;
-		};
-		swapString(str, tailIndex, nextSwapStringIndex);
-
+	//swap word
+	int wordTailIndex = 0;
+	while (str[wordTailIndex] != ' ' && str[wordTailIndex] != '\0') {
+		wordTailIndex++;
 	}
-	
+	swapString(str, 0, wordTailIndex - 1);
+	if (wordTailIndex == strlen(str)) {
+		return str;
+	}
+
+	int preWordTailIndex = wordTailIndex;
+	while (str[wordTailIndex] != '\0') {
+		while (!(str[preWordTailIndex] != ' ' && str[preWordTailIndex + 1] == ' ') && str[preWordTailIndex + 1] != '\0') {
+			preWordTailIndex++;
+		}
+		swapString(str, wordTailIndex + 1, preWordTailIndex);
+		wordTailIndex = preWordTailIndex + 1;
+	}
+	return str;
 }
 
 int main()
