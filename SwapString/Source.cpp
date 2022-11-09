@@ -4,9 +4,8 @@
 void swapString(char* str, int start, int end)
 {
 	if (start >= end) return;
-	int temp;
-	while (start < end)
-	{
+	char temp;
+	while (start < end){
 		temp = str[start];
 		str[start] = str[end];
 		str[end] = temp;
@@ -26,12 +25,12 @@ void parseAndReverseString(char* str)
 		while (!(str[wordTailIndex] != ' ' && (str[wordTailIndex + 1] == ' ' || str[wordTailIndex + 1] == '\0'))) {
 			wordTailIndex++;
 		}
-		if (str[wordTailIndex + 1] == '\0') break; //last all is space
 		swapString(str, ++startIndex, wordTailIndex);
 		//startIndex to first space
 		while(str[startIndex] != ' '){
 			startIndex++;
 		}
+		wordTailIndex++;
 	}
 	str[startIndex] = '\0';
 	swapString(str, 0, startIndex - 1);
@@ -39,7 +38,7 @@ void parseAndReverseString(char* str)
 
 int main()
 {
-	char str[100] = "   I  am    Fine!   ";
+	char str[100] = "  ";
 	parseAndReverseString(str);
 	return 0;
 }
