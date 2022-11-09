@@ -14,40 +14,27 @@ void swapString(char* str, int start, int end)
 	}
 }
 
-char* parseAndReverseString(char* str)
+void parseAndReverseString(char* str)
 {
-	if (!str) return nullptr;
-	//erase head space
-	while (*str == ' ') str++;
-	if (*str == '\0') return nullptr;
+	if (!str) return;
 
-	//erase tail space
-	int len = strlen(str);
-	while (str[--len] == ' ');
-	str[len + 1] = '\0';
-
-	//swap sentence
-	swapString(str, 0, strlen(str) - 1);
-
-	//swap word
+	int startIndex = -1;
 	int wordTailIndex = 0;
-	while (str[wordTailIndex] != ' ' && str[wordTailIndex] != '\0') {
-		wordTailIndex++;
-	}
-	swapString(str, 0, wordTailIndex - 1);
-	if (wordTailIndex == strlen(str)) {
-		return str;
-	}
-
-	int preWordTailIndex = wordTailIndex;
-	while (str[wordTailIndex] != '\0') {
-		while (!(str[preWordTailIndex] != ' ' && str[preWordTailIndex + 1] == ' ') && str[preWordTailIndex + 1] != '\0') {
-			preWordTailIndex++;
+	int len = strlen(str);
+	while (wordTailIndex < len) {
+		//index to word tail
+		while (!(str[wordTailIndex] != ' ' && (str[wordTailIndex + 1] == ' ' || str[wordTailIndex + 1] == '\0'))) {
+			wordTailIndex++;
 		}
-		swapString(str, wordTailIndex + 1, preWordTailIndex);
-		wordTailIndex = preWordTailIndex + 1;
+		if (str[wordTailIndex + 1] == '\0') break; //last all is space
+		swapString(str, ++startIndex, wordTailIndex);
+		//startIndex to first space
+		while(str[startIndex] != ' '){
+			startIndex++;
+		}
 	}
-	return str;
+	str[startIndex] = '\0';
+	swapString(str, 0, startIndex - 1);
 }
 
 int main()
