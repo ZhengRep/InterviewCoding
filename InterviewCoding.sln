@@ -83,6 +83,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestPalindromic", "Longe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetNthUglyNumber", "GetNthUglyNumber\GetNthUglyNumber.vcxproj", "{46D4E6F8-6CD3-49D0-A3AE-199A64EB6C5B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstNotRepeatChar", "FirstNotRepeatChar\FirstNotRepeatChar.vcxproj", "{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -411,6 +413,14 @@ Global
 		{46D4E6F8-6CD3-49D0-A3AE-199A64EB6C5B}.Release|x64.Build.0 = Release|x64
 		{46D4E6F8-6CD3-49D0-A3AE-199A64EB6C5B}.Release|x86.ActiveCfg = Release|Win32
 		{46D4E6F8-6CD3-49D0-A3AE-199A64EB6C5B}.Release|x86.Build.0 = Release|Win32
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Debug|x64.ActiveCfg = Debug|x64
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Debug|x64.Build.0 = Debug|x64
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Debug|x86.ActiveCfg = Debug|Win32
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Debug|x86.Build.0 = Debug|Win32
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Release|x64.ActiveCfg = Release|x64
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Release|x64.Build.0 = Release|x64
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Release|x86.ActiveCfg = Release|Win32
+		{EFA43F65-3F9C-47DB-B4FF-1875F4537DB7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
