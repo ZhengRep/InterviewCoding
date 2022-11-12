@@ -14,7 +14,7 @@ char* g_StrCombine2 = new char[g_MaxNumberLength * 2 + 1];
 
 int compare(const void* strNumber1, const void* strNumber2) //to define sort rule
 {
-	strcpy(g_StrCombine1, *(const char**)strNumber1); //
+	strcpy(g_StrCombine1, *(const char**)strNumber1); // the address of string
 	strcat(g_StrCombine1, *(const char**)strNumber2);
 	
 	strcpy(g_StrCombine2, *(const char**)strNumber2);
