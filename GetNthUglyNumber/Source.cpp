@@ -17,6 +17,45 @@ bool isUglyNumber(int number)
 	return number == 1 ? true : false;
 }
 
+int min(int a, int b, int c)
+{
+	int min = a < b ? a : b;
+	return min < c ? min : c;
+}
+
+int getNthUglyNumberByArray(int index)
+{
+	if (index < 1) return 0;
+
+	int* uglyNumbers = new int[index];
+	uglyNumbers[0] = 1;
+	int nextUglyNumberIndex = 1;
+
+	int* multipleTwoUglyNumber = uglyNumbers;
+	int* multipleThreeUglyNumber = uglyNumbers;
+	int* multipleFiveUglyNumber = uglyNumbers;
+
+	while (nextUglyNumberIndex < index) {
+		uglyNumbers[nextUglyNumberIndex] = min(*multipleTwoUglyNumber * 2, *multipleThreeUglyNumber * 3, *multipleFiveUglyNumber * 5);
+
+		//update multiple pointer
+		while (*multipleTwoUglyNumber * 2 <= uglyNumbers[nextUglyNumberIndex]) {
+			multipleTwoUglyNumber++;
+		}
+		while (*multipleThreeUglyNumber * 3 <= uglyNumbers[nextUglyNumberIndex]) {
+			multipleThreeUglyNumber++;
+		}
+		while (*multipleFiveUglyNumber * 5 <= uglyNumbers[nextUglyNumberIndex]) {
+			multipleFiveUglyNumber++;
+		}
+		nextUglyNumberIndex++;
+	}
+
+	int result = uglyNumbers[nextUglyNumberIndex - 1];
+	delete[] uglyNumbers;
+	return result;
+}
+
 int getNthUglyNumber(int index)
 {
 	if (index < 1) return 0;
@@ -40,12 +79,10 @@ ugly number:
 
 void Test(int index, int expected)
 {
-    if (getNthUglyNumber(index) == expected)
+    if (getNthUglyNumberByArray(index) == expected)
         printf("solution1 passed\n");
     else
         printf("solution1 failed\n");
-
-   
 }
 
 int main(int argc, char* argv[])
