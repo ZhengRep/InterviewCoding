@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b0314d67-816f-4703-9d4e-11fcb12e714c}</ProjectGuid>
-    <RootNamespace>InversePairs</RootNamespace>
+    <ProjectGuid>{0392b2ca-350f-478f-a6be-14343023c2b9}</ProjectGuid>
+    <RootNamespace>DivideAndConquerSort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
