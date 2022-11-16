@@ -4,11 +4,14 @@ int InversePairsCore(int* data, int* copy, int start, int end)
 {
 	if(!data || !copy || start > end) return 0;
 
-	if (start == end) return 0;
+	if (start == end) {
+		//copy[start] = data[end];
+		return 0;
+	}
 
 	int length = (end - start) / 2;
-	int leftInversePairs = InversePairsCore(data, copy, start, start + length);
-	int rightInversePairs = InversePairsCore(data, copy, start + length + 1, end);
+	int leftInversePairs = InversePairsCore(copy, data, start, start + length);
+	int rightInversePairs = InversePairsCore(copy, data, start + length + 1, end);
 
 	//left sub array end index
 	int i = start + length;
@@ -16,11 +19,12 @@ int InversePairsCore(int* data, int* copy, int start, int end)
 	int j = end;
 	int copyIndex = end;
 	int count = 0;
+	
 	while (i >= start && j >= start + length + 1) {
 		if (data[i] > data[j]) {
-			//count++;
-			//count += j - (start + length);
 			copy[copyIndex--] = data[i--];
+			count += j - (start + length);
+		
 		}
 		else {
 			copy[copyIndex--] = data[j--];
@@ -34,6 +38,7 @@ int InversePairsCore(int* data, int* copy, int start, int end)
 		copy[copyIndex--] = data[j--];
 	}
 	return leftInversePairs + rightInversePairs + count;
+
 }
 
 int InversePairs(int* data, int length)
@@ -41,9 +46,9 @@ int InversePairs(int* data, int length)
 	if (!data || length < 2) return 0;
 
 	int* copy = new int[length];
-	/*for (int i = 0; i < length; i++) {
+	for (int i = 0; i < length; i++) {
 		copy[i] = data[i];
-	}*/
+	}
 
 	int ret = InversePairsCore(data, copy, 0, length - 1);
 	delete[] copy;
@@ -60,6 +65,14 @@ void Test(const char* testName, int* data, int length, int expected)
 		printf("Passed.\n");
 	else
 		printf("Failed.\n");
+}
+
+void Tese0()
+{
+	int data[] = { 4, 1, 2, 3 };
+	int expected = 4;
+
+	Test("Test0", data, sizeof(data) / sizeof(int), expected);
 }
 
 void Test1()
