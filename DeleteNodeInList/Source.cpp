@@ -40,7 +40,7 @@ void deleteListNodeO1(PLISTNODE* pListHeaderAddr, PLISTNODE pToBeDeletedNode)
 
     PLISTNODE pListHeader = *pListHeaderAddr;
 
-    //delte last tail
+    //delete last tail
     if (pToBeDeletedNode->m_pNext == nullptr) {
         if (pListHeader->m_pNext == nullptr) {
             *pListHeaderAddr = nullptr;
